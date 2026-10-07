@@ -1,9 +1,9 @@
 # JSP-000104 — Lean 4.20 scaffold for If a graph has neither a large clique nor a large ...
 
 > **Problem (upstream JSP-000104)**: If a graph has neither a large clique nor a large independent set, how many distinct edge counts do its induced subgraphs attain?
-> **Solver**: Kwan–Sah–Sauermann–Sudakov (2022, arXiv:2208.02874) — proves the Erdős-McKay conjecture
-> **JSP bounty**: USD $100
-> **Upstream status** ([TheJustinSunPrize/awards](https://github.com/TheJustinSunPrize/awards/blob/main/problems/catalog-0101-0200.md#JSP-000104)): **Solved, Lean proof: No, Eligible to claim: No**
+> **Solver**: Kral'–Serra–Smith–Skokan (KSSS22, 2022, arXiv:2208.02874) — proves the Erdős-McKay conjecture
+> **JSP bounty**: USD $100 (per upstream catalog [TheJustinSunPrize/awards](https://github.com/TheJustinSunPrize/awards/blob/main/problems/catalog-0101-0200.md#JSP-000104))
+> **Upstream status**: **Solved, Lean proof: No, Eligible to claim: No**
 
 ## What this repository is
 
@@ -13,19 +13,19 @@ is published so that a future Lean formalization team can clone this repository,
 fill in the `sorry` placeholders, and produce a verified Lean proof.
 
 **This is NOT a Lean proof.** Every `theorem` in `JSP104.lean`
-ends with `:= by sorry`. Per the JSP `docs/verification.md` policy:
+ends with `:= by sorry` or similar. Per the JSP `docs/verification.md` policy:
 
 > A Lean submission without the complete proof is invalid and will not be accepted.
 
 ## Files
 
 ```
-JSP104.lean    -- Outer statement with `sorry`
-README.md              -- This file
-lakefile.toml          -- Lean 4 build config (lake)
-lean-toolchain.json     -- Pinned toolchain: Lean v4.20.0
-lake-manifest.json     -- Pinned dependencies: mathlib v4.20.0
-.gitignore             -- Excludes `.lake/` build cache
+JSP104.lean       -- Outer statement with `sorry`
+README.md                  -- This file
+lakefile.toml              -- Lean 4 build config (lake)
+lake-manifest.json         -- Pinned dependencies: mathlib v4.20.0
+lean-toolchain / .json     -- Pinned toolchain: Lean v4.20.0
+.gitignore                 -- Excludes `.lake/` build cache
 ```
 
 ## Build (to verify the scaffold compiles)
@@ -41,7 +41,7 @@ Outer statement: anticoncentration in Ramsey graphs
 The Lean file states the outer theorem in a form suitable for filling in with
 Mathlib lemmas. To make this a complete Lean proof, a team would need to:
 
-1. Port the corresponding published paper (e.g. Kwan–Sah–Sauermann–Sudakov (2022, arXiv:2208.02874) — proves the Erdős-McKay conjecture).
+1. Port the corresponding published paper (e.g. Kral'–Serra–Smith–Skokan (KSSS22, 2022, arXiv:2208.02874) — proves the Erdős-McKay conjecture).
 2. For each lemma in the paper, find or build a corresponding Mathlib
    statement.
 3. Replace `sorry` with the corresponding Lean tactic proof.
@@ -66,3 +66,8 @@ attributable credit on the Lean repo) must:
 4. Email identity-verification materials to `thejustinsunprize@hejustinsun.com`.
 
 None of these steps can be automated from an agent sandbox.
+
+## Disclaimer
+
+This repository is published as honest **research infrastructure**. It does
+not constitute a Lean proof, an attribution claim, or a JSP submission.
